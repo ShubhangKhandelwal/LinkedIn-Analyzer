@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Analyzer - Question</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Ask a Question</h2>
+    <form action="/question" method="post">
+        <div class="form-group">
+            <textarea class="form-control" name="question" placeholder="Enter your question here" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Get Answer</button>
+    </form>
+    {% if answer %}
+    <div class="mt-4">
+        <h3>Answer:</h3>
+        <p>{{ answer }}</p>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>
