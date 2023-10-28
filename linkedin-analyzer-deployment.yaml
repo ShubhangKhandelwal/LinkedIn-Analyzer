@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: linkedin-analyzer-deployment
+  labels:
+    app: linkedin-analyzer
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: linkedin-analyzer
+  template:
+    metadata:
+      labels:
+        app: linkedin-analyzer
+    spec:
+      containers:
+      - name: linkedin-analyzer
+        image: linkedin-analyzer:latest  # If you pushed to a registry, modify this accordingly
+        ports:
+        - containerPort: 5000
